@@ -2,6 +2,8 @@ package com.ngsoft.part2.SetGame;
 
 import java.util.List;
 
+import com.ngsoft.part2.SetGame.impl.PlayResult;
+
 public interface GamePlay {
 
     /**
@@ -25,7 +27,7 @@ public interface GamePlay {
      * NOTE:boolean is probably not enouugh here - we should generate a PlayResultClass....
      **/
 
-    boolean play(int card1, int card2, int card3);
+    PlayResult play(int card1, int card2, int card3);
 
     /**
      * any play should either increase or decrease the score, depending on success

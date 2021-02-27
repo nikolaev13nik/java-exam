@@ -1,13 +1,17 @@
 package com.ngsoft.part2.SetGame;
 
+
 import java.util.List;
 
 public interface Deck {
-    void reset();
 
-    void shuffle();
+	void reset();
 
-    List<Card> deal(int qty);
+	void shuffle();
 
-    int size();
+	List<Card> deal(int qty);
+
+	int size();
+
+	List<Card> getDeck();
 }

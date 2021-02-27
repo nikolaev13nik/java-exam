@@ -11,6 +11,10 @@ import java.util.List;
 import java.util.Scanner;
 
 public class DefaultTodoDao implements TodoDao {
+	
+	private static List<TodoItem> todoItems;
+	
+	
     @Override
     public synchronized List<TodoItem> getTodos() throws FileNotFoundException, URISyntaxException {
         if(todoItems == null){
@@ -30,5 +34,5 @@ public class DefaultTodoDao implements TodoDao {
         return todoItems;
     }
 
-    private static List<TodoItem> todoItems;
+    
 }

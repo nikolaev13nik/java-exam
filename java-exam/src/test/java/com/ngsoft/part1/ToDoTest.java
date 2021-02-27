@@ -39,7 +39,7 @@ public class ToDoTest {
 
 
     @Test
-    public void testCountFiltered() {
+    public void testCountFiltered() {  	
         long count = todoService.countFiltered(2, true, "em");
         assertEquals(3, count);
     }

@@ -10,5 +10,27 @@
 
     <alias name="defaultIdNumberValidator" alias="idNumberValidator"/>
     <bean name="defaultIdNumberValidator" class="com.ngsoft.part1.IdNumber.DefaultIdNumberValidator"/>
+    
+     
+    <alias name="defaultTodoService" alias="todoService"/>
+    <bean name="defaultTodoService" class="com.ngsoft.part1.services.DefaultTodoService"></bean>
+    
+   
+    <alias name="deskImpl" alias="deskImpl"/>
+    <bean name="deskImpl" class="com.ngsoft.part2.SetGame.impl.DeckImpl"></bean>
+    
+    
+    
+    <alias name="gameRulesImpl" alias="gameRulesImpl"/>
+    <bean name="gameRulesImpl" class="com.ngsoft.part2.SetGame.impl.GameRulesImpl"></bean>
+    
+    <alias name="score" alias="score"/>
+    <bean name="score" class="com.ngsoft.part2.SetGame.Score"></bean>
+    
+    <alias name="gamePlayService" alias="gamePlayService"/>
+    <bean name="gamePlayService" class="com.ngsoft.part2.SetGame.impl.GamePlayService"></bean>
+    
+    
+    
 
 </beans>
