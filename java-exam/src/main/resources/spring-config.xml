@@ -24,7 +24,7 @@
 	</bean>
 
 
-	<alias name="deskImpl" alias="deskImpl" />
+	<alias name="deskImpl" alias="deskImpl"/>
 	<bean name="deskImpl"
 		class="com.ngsoft.part2.SetGame.impl.DeckImpl"></bean>
 
@@ -40,7 +40,9 @@
 	<alias name="gamePlayService" alias="gamePlayService" />
 	<bean name="gamePlayService"
 		class="com.ngsoft.part2.SetGame.impl.GamePlayService">
-		<constructor-arg name="deck" ref="deskImpl" />
+		<constructor-arg name="deck" ref="deskImpl"/>
+		<constructor-arg name="score" ref="score"/>
+		<constructor-arg name="gameRules" ref="gameRulesImpl"/>
 		</bean>
 
 
