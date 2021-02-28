@@ -3,7 +3,11 @@ package com.ngsoft.part1.services;
 import java.io.FileNotFoundException;
 import java.net.URISyntaxException;
 import java.util.List;
-import com.ngsoft.part1.dao.DefaultTodoDao;
+
+
+
+
+import com.ngsoft.part1.dao.TodoDao;
 import com.ngsoft.part1.pojos.TodoItem;
 
 /**
@@ -23,14 +27,16 @@ import com.ngsoft.part1.pojos.TodoItem;
 
 public class DefaultTodoService implements TodoService {
 
-	DefaultTodoDao defaultTodoDao;
-
+	TodoDao todoDao;
+	
 	List<TodoItem> todoItems;
 
-	public DefaultTodoService(DefaultTodoDao defaultTodoDao) throws FileNotFoundException, URISyntaxException {
-		this.defaultTodoDao = defaultTodoDao;
-		this.todoItems = defaultTodoDao.getTodos();
+
+	public DefaultTodoService(TodoDao todoDao) throws FileNotFoundException, URISyntaxException {
+		this.todoDao = todoDao;
+		this.todoItems = todoDao.getTodos();
 	}
+	
 
 	@Override
 	public long countAll() {

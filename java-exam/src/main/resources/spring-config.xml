@@ -1,36 +1,49 @@
 <?xml version = "1.0" encoding = "UTF-8"?>
 
-<beans xmlns = "http://www.springframework.org/schema/beans"
-       xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation = "http://www.springframework.org/schema/beans
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
-    <alias name="defaultTodoDao" alias="todoDao"/>
-    <bean name="defaultTodoDao" class="com.ngsoft.part1.dao.DefaultTodoDao"></bean>
 
-    <alias name="defaultIdNumberValidator" alias="idNumberValidator"/>
-    <bean name="defaultIdNumberValidator" class="com.ngsoft.part1.IdNumber.DefaultIdNumberValidator"/>
-    
-     
-    <alias name="defaultTodoService" alias="todoService"/>
-    <bean name="defaultTodoService" class="com.ngsoft.part1.services.DefaultTodoService"></bean>
-    
-   
-    <alias name="deskImpl" alias="deskImpl"/>
-    <bean name="deskImpl" class="com.ngsoft.part2.SetGame.impl.DeckImpl"></bean>
-    
-    
-    
-    <alias name="gameRulesImpl" alias="gameRulesImpl"/>
-    <bean name="gameRulesImpl" class="com.ngsoft.part2.SetGame.impl.GameRulesImpl"></bean>
-    
-    <alias name="score" alias="score"/>
-    <bean name="score" class="com.ngsoft.part2.SetGame.Score"></bean>
-    
-    <alias name="gamePlayService" alias="gamePlayService"/>
-    <bean name="gamePlayService" class="com.ngsoft.part2.SetGame.impl.GamePlayService"></bean>
-    
-    
-    
+
+	<alias name="defaultTodoDao" alias="todoDao" />
+	<bean name="defaultTodoDao"
+		class="com.ngsoft.part1.dao.DefaultTodoDao"></bean>
+
+
+	<alias name="defaultIdNumberValidator" alias="idNumberValidator" />
+	<bean name="defaultIdNumberValidator"
+		class="com.ngsoft.part1.IdNumber.DefaultIdNumberValidator" />
+
+
+	<alias name="defaultTodoService" alias="todoService" />
+	<bean name="defaultTodoService"
+		class="com.ngsoft.part1.services.DefaultTodoService">
+		<constructor-arg name="todoDao" ref="defaultTodoDao" />
+	</bean>
+
+
+	<alias name="deskImpl" alias="deskImpl" />
+	<bean name="deskImpl"
+		class="com.ngsoft.part2.SetGame.impl.DeckImpl"></bean>
+
+
+
+	<alias name="gameRulesImpl" alias="gameRulesImpl" />
+	<bean name="gameRulesImpl"
+		class="com.ngsoft.part2.SetGame.impl.GameRulesImpl"></bean>
+
+	<alias name="score" alias="score" />
+	<bean name="score" class="com.ngsoft.part2.SetGame.Score"></bean>
+
+	<alias name="gamePlayService" alias="gamePlayService" />
+	<bean name="gamePlayService"
+		class="com.ngsoft.part2.SetGame.impl.GamePlayService">
+		<constructor-arg name="deck" ref="deskImpl" />
+		</bean>
+
+
+
 
 </beans>
